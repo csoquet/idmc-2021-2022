@@ -1,0 +1,4 @@
+###
+GET http://localhost:8080/games
+
+<> 2021-11-17T142158.200.json
