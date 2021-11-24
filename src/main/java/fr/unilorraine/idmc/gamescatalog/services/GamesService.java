@@ -2,7 +2,6 @@ package fr.unilorraine.idmc.gamescatalog.services;
 
 import fr.unilorraine.idmc.gamescatalog.dto.GameView;
 import fr.unilorraine.idmc.gamescatalog.dto.NewGame;
-import fr.unilorraine.idmc.gamescatalog.entities.Game;
 import fr.unilorraine.idmc.gamescatalog.exceptions.PublisherNotFound;
 import fr.unilorraine.idmc.gamescatalog.mappers.GamesMapper;
 import fr.unilorraine.idmc.gamescatalog.repositories.GamesRepository;
@@ -23,7 +22,6 @@ public class GamesService {
 
     public List<GameView> findAll() {
         return mapper.toDto(repo.findAll());
-
     }
 
     public GameView create(NewGame newGame) {
