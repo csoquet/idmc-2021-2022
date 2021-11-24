@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, I'm index, who are you?</title>
+</head>
+<body>
+
+Hello, Index, I'm Rodi
+<h3>
+    <span id="valeur"></span>
+</h3>
+<script>
+    fetch("http://127.0.0.1:8080/postman-echo/get")
+        .then((response) => {
+        response.text().then((valeur) => {
+            var valeurs = valeur;
+            document.getElementById("valeur").innerHTML=valeurs;
+        });
+
+    });
+
+
+</script>
+</body>
+</html>
