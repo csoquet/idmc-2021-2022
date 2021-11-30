@@ -11,11 +11,23 @@ Hello, Index, I'm Rodi
     <span id="valeur"></span>
 </h3>
 <script>
-    fetch("http://127.0.0.1:8080/postman-echo/get")
+    url = "http://127.0.0.1:8080/partners/get"
+
+    fetch(url)
         .then((response) => {
         response.text().then((valeur) => {
             var valeurs = valeur;
-            document.getElementById("valeur").innerHTML=valeurs;
+            const obj = JSON.parse(valeurs);
+           // var tableau = [];
+            var countResult = Object.keys(obj['results']).length;
+            for(var y = 0; y < countResult; y++){
+                var countGames = Object.keys(obj['results'][y]['games']).length;
+                for(var i = 0; i < countGames; i++){
+                    document.getElementById("valeur").innerHTML += obj['results'][y]['games'][i]['name'];
+                    document.getElementById("valeur").innerHTML += "<br/>";
+                }
+            }
+
         });
 
     });
