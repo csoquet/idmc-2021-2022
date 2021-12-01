@@ -7,10 +7,20 @@ Content-Type: application/json
 ###
 POST http://localhost:8080/games
 Content-Type: application/json
+Authorization: Basic user password
 
 {
   "name": "Quake III",
   "category": "Shooter",
   "rating": 10,
   "price": 666
+}
+
+###
+POST http://localhost:8080/publishers
+Content-Type: application/json
+Authorization: Basic user password
+
+{
+  "name": "Electronic Arts"
 }
